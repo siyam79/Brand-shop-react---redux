@@ -1,17 +1,22 @@
 import { useForm } from "react-hook-form"
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/Products/action";
 
 
 
 const AddProducts = () => {
 
+    const dispatch = useDispatch()
     const {
         register,
         handleSubmit,
+        // eslint-disable-next-line no-unused-vars
         watch,
         formState: { errors },
     } = useForm()
     const onSubmit = (data) => {
-        console.log(data)
+        // console.log(data)
+        dispatch(addProduct(data))
     }
 
     return (

@@ -2,8 +2,9 @@ import { ADD_PRODUCT, ADD_QUANTITY, REMOVE_QUANTITY } from "./actionType";
 import { initialState } from "./initialState"
 
 const nextId = (items) => {
-    return items.reducer((id, item) => Math.max(id, item.id), -1) + 1
+    return items.reduce((id, item) => Math.max(id, item.id), -1) + 1;
 }
+console.log(nextId);
 
 const productReducer = (state = initialState, action) => {
 
@@ -14,7 +15,7 @@ const productReducer = (state = initialState, action) => {
                     id: nextId(state),
                     ...action.payload,
                     price: parseFloat(action.payload.price),
-                    quantity: parent(action.payload.quantity)
+                    quantity: parseInt(action.payload.quantity)
                 }
             ]
         case ADD_QUANTITY:
@@ -25,7 +26,7 @@ const productReducer = (state = initialState, action) => {
                         quantity: product.quantity + action.payload.quantity
                     }
                 }
-                 else {
+                else {
                     return product
                 }
             })
@@ -38,7 +39,7 @@ const productReducer = (state = initialState, action) => {
                         quantity: product.quantity - 1
                     }
                 }
-                else{
+                else {
                     return product
                 }
             }))
