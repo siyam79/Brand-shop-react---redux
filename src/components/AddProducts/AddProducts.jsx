@@ -20,10 +20,10 @@ const AddProducts = () => {
     }
 
     return (
-        <div className=" overflow-hidden border py-6 px-4 ">
+        <div className=" overflow-hidden border py-6 px-4 w-full  ">
 
             <h1 className=" text-center font-bold text-2xl py-6 "> Add New Products  </h1>
-            <form onSubmit={handleSubmit(onSubmit)} className=" space-y-4  text-[#4A5B6D] ">
+            <form onSubmit={handleSubmit(onSubmit)} className=" space-y-4  text-[#4A5B6D] w-full ">
                 <div className=" space-y-2  ">
                     <label className="font-semibold  "> Product Name </label>
                     <input {...register("name", { required: true })} className=" w-full px-4 py-1 text-[#4A5B6D] border rounded-sm  focus:outline-none focus:border-blue-500 " type="text" placeholder="Product Name " name="name" required />

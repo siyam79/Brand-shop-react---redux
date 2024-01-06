@@ -14,7 +14,7 @@ const Home = () => {
                 <div className="col-span-2">
                     {/* show Product */}
 
-                    <div className="">
+                    <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-y-10 gap-4 ">
                         {
                             products.length > 0 ? products.map((product , i)=> <ProductItem key={i} product={product}></ProductItem>) : <div className="text-4xl flex items-center justify-center font-bold ">
                                 <h1> No Data Found!! </h1>
@@ -22,7 +22,7 @@ const Home = () => {
                         }
                     </div>
                 </div>
-                <div>
+                <div className="">
                     <AddProducts></AddProducts>
                 </div>
             </div>
